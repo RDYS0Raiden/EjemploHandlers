@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         myHandler=Handler(mainLooper)
         binding.btnIniciar.setOnClickListener {
             pasarPantalla()
-
+            iniciarProcesoParalelo()
         }
 
     }
@@ -41,5 +41,25 @@ class MainActivity : AppCompatActivity() {
            }
 
        startActivity(intent)
+    }
+    private fun iniciarProcesoParalelo(){
+        Thread{
+            try {
+                for(i in 0..100){
+                    Thread.sleep(500)
+                    myHandler.post{
+                        //va a comunicarse con la UI Thread
+                        binding.apply{
+                            txtPorcentaje.text="$i%"
+                            PB.progress=i
+                        }
+                    }
+                }
+            }catch (e:InterruptedException){
+                e.printStackTrace()
+            }
+
+        }.start()
+
     }
 }
