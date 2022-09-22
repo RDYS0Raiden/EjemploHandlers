@@ -24,5 +24,15 @@ class Bienvenida : AppCompatActivity() {
         binding.txtResultado.text = respuesta
 
     }
+    private fun iniciarProcesoParalelo(){
+        Thread{
+        try {
 
+        }catch (e:InterruptedException){
+            e.printStackTrace()
+        }
+
+        }.start()
+
+    }
 }
