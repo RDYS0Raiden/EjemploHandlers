@@ -27,7 +27,9 @@ class Bienvenida : AppCompatActivity() {
     private fun iniciarProcesoParalelo(){
         Thread{
         try {
-
+        for(i in 0..100){
+            Thread.sleep(500)
+        }
         }catch (e:InterruptedException){
             e.printStackTrace()
         }
