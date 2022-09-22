@@ -21,7 +21,7 @@ class Bienvenida : AppCompatActivity() {
             el texto es:${intent.getStringExtra("texto")}
             su valor es:${intent.getIntExtra("valor",0)}
         """.trimIndent()
-        binding.txtResultado.text=respuesta
+        binding.txtResultado.text = respuesta
 
     }
 
