@@ -2,6 +2,7 @@ package com.example.ejemplohandlers
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import com.example.ejemplohandlers.databinding.ActivityBienvenidaBinding
 
 class Bienvenida : AppCompatActivity() {
